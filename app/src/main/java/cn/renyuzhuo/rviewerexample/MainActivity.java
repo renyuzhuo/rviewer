@@ -26,9 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
         noteBox = App.get().boxStore().boxFor(Note.class);
 
-        notes = (TextView) findViewById(R.id.notes);
-        addNote = (Button) findViewById(R.id.note_add);
-        noteText = (EditText) findViewById(R.id.note_text);
+        notes = findViewById(R.id.notes);
+        addNote = findViewById(R.id.note_add);
+        noteText = findViewById(R.id.note_text);
 
         addNote.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,12 +42,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addNote() {
-        for (int i = 0; i < 100; i++) {
-            Note note = new Note();
-            note.setDate(new Date());
-            note.setText(noteText.getText().toString());
-            noteBox.put(note);
-        }
+        Note note = new Note();
+        note.setDate(new Date());
+        note.setText(noteText.getText().toString());
+        noteBox.put(note);
         noteText.setText("");
     }
 
