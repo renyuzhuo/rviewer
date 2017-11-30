@@ -55,7 +55,7 @@ install {
         pom {
             project {
                 packaging 'aar'
-                name 'rviewer'    //项目描述
+                name 'rviewer'
                 description 'rviewer'
                 url siteUrl
                 licenses {
