@@ -47,7 +47,7 @@ task rlog(type: Copy, dependsOn: ['build']) {
     from('build/intermediates/bundles/release/')
     into('build/libs')
     include('classes.jar')
-    rename('classes.jar', 'rviewer.jar')
+    rename('classes.jar', 'rviewer-no-op.jar')
 }
 
 install {
@@ -55,8 +55,8 @@ install {
         pom {
             project {
                 packaging 'aar'
-                name 'rviewer'    //项目描述
-                description 'rviewer'
+                name 'rviewer-no-op'    //项目描述
+                description 'rviewer-no-op'
                 url siteUrl
                 licenses {
                     license {
@@ -106,7 +106,7 @@ bintray {
     configurations = ['archives']
     pkg {
         repo = "maven"
-        name = "rviewer"
+        name = "rviewer-no-op"
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["MIT"]
@@ -125,8 +125,8 @@ uploadArchives {
         def deployPath = file(properties.getProperty('aar.github.maven'))
         repository(url: "file://${deployPath.absolutePath}")
         pom.project {
-            groupId "cn.renyuzhuo"
-            artifactId "rviewer"
+            groupId "cn.renyuzhuo.rviewer"
+            artifactId "rviewer-no-op"
             version "1.0"
         }
     }
