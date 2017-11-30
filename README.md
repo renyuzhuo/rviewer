@@ -49,7 +49,8 @@ Notice: **You Should all Add toString() like:**
 
 All the things is done.
 
-![Operation](https://github.com/renyuzhuo/rviewer/tree/master/gif/operation.gif)
+<img width="300" src="https://github.com/renyuzhuo/rviewer/blob/master/gif/operation.gif?raw=true" />
+
 
 ## License
 
