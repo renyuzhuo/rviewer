@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:tools="http://schemas.android.com/tools"
-    package="cn.renyuzhuo.objectbox.viewer">
+    package="cn.renyuzhuo.viewer">
 
     <uses-sdk tools:overrideLibrary="android.support.customtabs,io.objectbox.android" />
-
-    <application></application>
 
 </manifest>

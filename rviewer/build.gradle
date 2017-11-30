@@ -7,7 +7,7 @@ apply plugin: 'maven'
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
-version = "1.0"
+version = "1.0.2"
 
 def siteUrl = 'http://renyuzhuo.cn'
 def gitUrl = 'https://github.com/renyuzhuo/rviewer.git'
@@ -127,7 +127,7 @@ uploadArchives {
         pom.project {
             groupId "cn.renyuzhuo.rviewer"
             artifactId "rviewer"
-            version "1.0"
+            version "1.0.2"
         }
     }
 }
