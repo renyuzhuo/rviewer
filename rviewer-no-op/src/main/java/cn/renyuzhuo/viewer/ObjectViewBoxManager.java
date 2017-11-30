@@ -1,4 +1,4 @@
-package cn.renyuzhuo.objectbox.viewer;
+package cn.renyuzhuo.viewer;
 
 import java.util.ArrayList;
 
