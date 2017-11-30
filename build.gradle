@@ -3,6 +3,9 @@
 buildscript {
     ext.objectboxVersion = '1.2.1'
     repositories {
+        maven {
+            url "https://raw.githubusercontent.com/renyuzhuo/rviewer/master"
+        }
         mavenCentral()
         jcenter()
         maven {
@@ -27,6 +30,9 @@ repositories {
 
 allprojects {
     repositories {
+        maven {
+            url "https://raw.githubusercontent.com/renyuzhuo/rviewer/master"
+        }
         mavenCentral()
         jcenter()
         maven {
