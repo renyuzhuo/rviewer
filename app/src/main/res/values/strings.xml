@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ObjectBox Viewer</string>
+    <string name="note_text">Add note</string>
+    <string name="note_add">Add Note</string>
+</resources>

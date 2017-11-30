@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RViewer</string>
+    <string name="title_activity_main">ObjectBox DB</string>
+    <string name="all_tables">All Tables</string>
+</resources>

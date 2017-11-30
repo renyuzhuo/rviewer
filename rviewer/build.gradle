@@ -1,0 +1,133 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven'
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+version = "1.0"
+
+def siteUrl = 'http://renyuzhuo.cn'
+def gitUrl = 'https://github.com/RWebRTC/rviewer.git'
+group = "cn.renyuzhuo.rviewer"
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile "io.objectbox:objectbox-android:$objectboxVersion"
+    annotationProcessor "io.objectbox:objectbox-processor:$objectboxVersion"
+}
+
+task rlog(type: Copy, dependsOn: ['build']) {
+    from('build/intermediates/bundles/release/')
+    into('build/libs')
+    include('classes.jar')
+    rename('classes.jar', 'rviewer.jar')
+}
+
+install {
+    repositories.mavenInstaller {
+        pom {
+            project {
+                packaging 'aar'
+                name 'rviewer'    //项目描述
+                description 'rviewer'
+                url siteUrl
+                licenses {
+                    license {
+                        name 'MIT'
+                        url 'http://renyuzhuo.cn/MIT'
+                    }
+                }
+                developers {
+                    developer {
+                        id 'renyuzhuo'        //填写的一些基本信息
+                        name 'renyuzhuo'
+                        email 'renyuzhuo@foxmail.com'
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    options.encoding = "utf-8"
+    options.charSet = "utf-8"
+}
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    configurations = ['archives']
+    pkg {
+        repo = "maven"
+        name = "rviewer"
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["MIT"]
+        publish = true
+        version {
+            gpg {
+                sign = true
+                passphrase = properties.getProperty("bintray.gpg.password")
+            }
+        }
+    }
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        def deployPath = file(properties.getProperty('aar.github.maven'))
+        repository(url: "file://${deployPath.absolutePath}")
+        pom.project {
+            groupId "cn.renyuzhuo"
+            artifactId "rviewer"
+            version "1.0"
+        }
+    }
+}

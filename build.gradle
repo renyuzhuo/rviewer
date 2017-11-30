@@ -1,0 +1,50 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.objectboxVersion = '1.2.1'
+    repositories {
+        mavenCentral()
+        jcenter()
+        maven {
+            url "http://objectbox.net/beta-repo/"
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath "io.objectbox:objectbox-gradle-plugin:$objectboxVersion"
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.2'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+    }
+}
+
+plugins {
+    id "me.tatarka.retrolambda" version "3.2.3"
+}
+
+repositories {
+    mavenCentral()
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        jcenter()
+        maven {
+            url "http://objectbox.net/beta-repo/"
+        }
+        maven {
+            url 'https://dl.google.com/dl/android/maven2/'
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    compileSdkVersion = 26
+    buildToolsVersion = "26.0.2"
+    minSdkVersion = 14
+    targetSdkVersion = 23
+}
