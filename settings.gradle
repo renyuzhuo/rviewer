@@ -1,1 +1,3 @@
-include ':app', ':rviewer', ':rviewer-no-op'
+include ':app'
+include ':rviewer'
+//include ':rviewer-no-op'

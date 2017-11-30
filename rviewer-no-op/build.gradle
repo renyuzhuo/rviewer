@@ -10,7 +10,7 @@ properties.load(project.rootProject.file('local.properties').newDataInputStream(
 version = "1.0"
 
 def siteUrl = 'http://renyuzhuo.cn'
-def gitUrl = 'https://github.com/RWebRTC/rviewer.git'
+def gitUrl = 'https://github.com/renyuzhuo/rviewer.git'
 group = "cn.renyuzhuo.rviewer"
 
 android {
