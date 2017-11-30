@@ -1,4 +1,4 @@
-package cn.renyuzhuo.objectbox.viewer;
+package cn.renyuzhuo.viewer;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.renyuzhuo.objectbox.viewer.R;
 import io.objectbox.Box;
 
 public class MainActivity extends AppCompatActivity {
