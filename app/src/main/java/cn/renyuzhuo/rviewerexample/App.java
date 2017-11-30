@@ -19,7 +19,7 @@ public class App extends Application {
 
         ArrayList<Class> classes = new ArrayList<>();
         classes.add(Note.class);
-        ObjectViewBoxManager.getInstance().init(boxStore, classes);
+//        ObjectViewBoxManager.getInstance().init(boxStore, classes);
     }
 
     public static App get() {

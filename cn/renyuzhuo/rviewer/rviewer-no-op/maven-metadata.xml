@@ -3,10 +3,11 @@
   <groupId>cn.renyuzhuo.rviewer</groupId>
   <artifactId>rviewer-no-op</artifactId>
   <versioning>
-    <release>1.0</release>
+    <release>1.0.2</release>
     <versions>
       <version>1.0</version>
+      <version>1.0.2</version>
     </versions>
-    <lastUpdated>20171130073543</lastUpdated>
+    <lastUpdated>20171130074634</lastUpdated>
   </versioning>
 </metadata>

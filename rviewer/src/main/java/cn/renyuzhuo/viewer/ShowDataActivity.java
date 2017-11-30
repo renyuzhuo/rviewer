@@ -12,10 +12,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.renyuzhuo.objectbox.viewer.R;
 import io.objectbox.Box;
 
-public class MainActivity extends AppCompatActivity {
+public class ShowDataActivity extends AppCompatActivity {
 
     StringBuilder stringBuilder;
     ArrayList<Box> boxStore;
