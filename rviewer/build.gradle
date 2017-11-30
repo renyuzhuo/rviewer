@@ -125,7 +125,7 @@ uploadArchives {
         def deployPath = file(properties.getProperty('aar.github.maven'))
         repository(url: "file://${deployPath.absolutePath}")
         pom.project {
-            groupId "cn.renyuzhuo"
+            groupId "cn.renyuzhuo.rviewer"
             artifactId "rviewer"
             version "1.0"
         }

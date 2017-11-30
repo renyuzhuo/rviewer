@@ -4,7 +4,6 @@ import android.app.Application;
 
 import java.util.ArrayList;
 
-import cn.renyuzhuo.objectbox.viewer.ObjectViewBoxManager;
 import io.objectbox.BoxStore;
 
 public class App extends Application {
@@ -20,7 +19,7 @@ public class App extends Application {
 
         ArrayList<Class> classes = new ArrayList<>();
         classes.add(Note.class);
-        ObjectViewBoxManager.getInstance().init(boxStore, classes);
+//        ObjectViewBoxManager.getInstance().init(boxStore, classes);
     }
 
     public static App get() {
