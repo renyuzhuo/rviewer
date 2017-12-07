@@ -2,6 +2,8 @@
 
 A library to check the data saved by [ObjectBox](https://github.com/greenrobot/ObjectBox).
 
+打开、查看 ObjectBox 存储的 data.mdb 文件。
+
 ## Getting started
 
 In your `build.gradle`:
